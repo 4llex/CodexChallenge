@@ -1,7 +1,9 @@
 package com.codexchallenge.controller
 
 import com.codexchallenge.controller.requestcnpj.PostCnpjRequest
+import com.codexchallenge.extension.toCnpjModel
 import com.codexchallenge.model.CNPJ
+import com.codexchallenge.service.CnpjService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -13,22 +15,25 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("validate_cnpj")
-class CnpjController {
+class CnpjController (
+        val cnpjService: CnpjService
+) {
 
     @GetMapping
-    fun helloWorl(): String {
-        return "Hello cruel world from my application"
+    fun helloWorld(): String {
+        return cnpjService.helloWorld()
     }
 
     @GetMapping("/{cnpj}")
-    fun getvalidateCnpj(@PathVariable cnpj: String): String {
-        return "cnpj from url get: $cnpj"
+    fun getValidateCnpj(@PathVariable cnpj: String): String {
+        return cnpjService.getValidateCnpj(cnpj)
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK) //TODO: check status response
-    fun validateCnpj(@RequestBody postCnpjRequest: PostCnpjRequest): CNPJ {
-        return CNPJ(postCnpjRequest.cnpj , false)
+    fun validateCnpj(@RequestBody cnpj: PostCnpjRequest): CNPJ {
+        //return cnpjService.validateCnpj(CNPJ(cnpj.cnpj , false))
+        return cnpjService.validateCnpj(cnpj.toCnpjModel())
     }
 
 }
