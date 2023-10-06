@@ -12,3 +12,7 @@ data class RectangleModel(
         var p1: Point,
         var p2: Point
 )
+
+data class RectangleResponseModel(
+        var intersectionDetected: Boolean = false
+)
