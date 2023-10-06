@@ -19,6 +19,11 @@ repositories {
 }
 
 dependencies {
+	//ktor libraries
+	implementation("io.ktor:ktor-client-core:1.6.5")
+	implementation("io.ktor:ktor-client-json:1.6.5")
+	implementation("io.ktor:ktor-client-serialization:1.6.5")
+
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
