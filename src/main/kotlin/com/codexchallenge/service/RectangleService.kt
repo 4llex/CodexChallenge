@@ -1,6 +1,7 @@
 package com.codexchallenge.service
 
-import com.codexchallenge.model.RectangleResponseModel
+import com.codexchallenge.model.AreaResponseModel
+import com.codexchallenge.model.IntersectionResponseModel
 import com.codexchallenge.model.RectanglesPointsModel
 import org.springframework.stereotype.Service
 import kotlin.math.max
@@ -13,10 +14,19 @@ class RectangleService {
         return "Rectangle end-point helloWorld()"
     }
 
-    fun checkRectangleIntersection(rectanglesPoints: RectanglesPointsModel): RectangleResponseModel {
-        return RectangleResponseModel(intersectionDetected = hasIntersection(rectanglesPoints))
+    fun checkRectangleIntersection(rectanglesPoints: RectanglesPointsModel): IntersectionResponseModel {
+        return IntersectionResponseModel(intersectionDetected = hasIntersection(rectanglesPoints))
     }
 
+    fun calculateIntersectionArea(rectanglesPoints: RectanglesPointsModel): AreaResponseModel {
+        return calculateArea(rectanglesPoints)
+    }
+
+}
+
+fun calculateArea(rectanglesPoints: RectanglesPointsModel): AreaResponseModel {
+    //
+    return AreaResponseModel()
 }
 
 fun hasIntersection(rectanglesPoints: RectanglesPointsModel): Boolean{
@@ -25,23 +35,21 @@ fun hasIntersection(rectanglesPoints: RectanglesPointsModel): Boolean{
     val y1: Int = rectanglesPoints.rec1.p1.y
     val x2: Int = rectanglesPoints.rec1.p2.x
     val y2: Int = rectanglesPoints.rec1.p2.y
-    val pointsRecA: List<String> = listOf( "A = ","($x1, $y1)", "($x2, $y2)")
-    println(pointsRecA)
+    println("A = p1($x1, $y1) - p2($x2, $y2)")
 
     //Rectangle A points
     val x3 = rectanglesPoints.rec2.p1.x
     val y3 = rectanglesPoints.rec2.p1.y
     val x4 = rectanglesPoints.rec2.p2.x
     val y4 = rectanglesPoints.rec2.p2.y
-    val pointsRecB: List<String> = listOf( "B = ","($x3, $y3)", "($x4, $y4)")
-    println(pointsRecB)
+    println("B = p1($x3, $y3) - p2($x4, $y4)")
 
     //Math definition to identity rectangles intersection
     val x5 = max(x1, x3)
     val y5 = max(y1, y3)
     val x6 = min(x2, x4)
     val y6 = min(y2, y4)
-    println("($x5, $y5), ($x6, $y6)")
+    println("Retangulo resultante = p1($x5, $y5), p2($x6, $y6)")
 
     // no intersection condition
     return if (x5 > x6 || y5 > y6) {

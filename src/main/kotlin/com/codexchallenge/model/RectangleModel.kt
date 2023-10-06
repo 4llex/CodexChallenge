@@ -13,6 +13,11 @@ data class RectangleModel(
         var p2: Point
 )
 
-data class RectangleResponseModel(
+data class IntersectionResponseModel(
         var intersectionDetected: Boolean = false
+)
+
+data class AreaResponseModel(
+        var intersectionDetected: Boolean = false,
+        var areaOfIntersection: Int = 0
 )
