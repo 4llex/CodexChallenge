@@ -23,10 +23,15 @@ dependencies {
 	implementation("io.ktor:ktor-client-core:1.6.5")
 	implementation("io.ktor:ktor-client-json:1.6.5")
 	implementation("io.ktor:ktor-client-serialization:1.6.5")
+	//spring data jpa and mysql connector
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+	runtimeOnly("mysql:mysql-connector-java:8.0.28")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
