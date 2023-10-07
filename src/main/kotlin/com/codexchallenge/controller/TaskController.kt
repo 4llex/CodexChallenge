@@ -1,6 +1,7 @@
 package com.codexchallenge.controller
 
 import com.codexchallenge.controller.requesttask.PostTaskRequest
+import com.codexchallenge.extension.toTaskModel
 import com.codexchallenge.model.TaskModel
 import com.codexchallenge.service.TaskService
 import org.springframework.http.HttpStatus
@@ -35,7 +36,7 @@ class TaskController(
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody task: PostTaskRequest) {
-        taskService.create(task)
+        taskService.create(task.toTaskModel())
     }
 
     @DeleteMapping("/{id}")

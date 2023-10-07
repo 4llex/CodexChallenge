@@ -8,15 +8,15 @@ import org.springframework.stereotype.Service
 class TaskService {
 
     fun getAll(): TaskModel {
-        return TaskModel("1", "Limpar o quarto")
+        return TaskModel(0, "Limpar o quarto")
     }
 
     fun get(id: String): TaskModel {
         //TODO: missing implementation
-        return TaskModel("1", "Limpar o quarto com id")
+        return TaskModel(0, "Limpar o quarto com id")
     }
 
-    fun create(task: PostTaskRequest) {
+    fun create(task: TaskModel) {
         println(task)
     }
 
