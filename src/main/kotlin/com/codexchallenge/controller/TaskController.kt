@@ -22,15 +22,15 @@ class TaskController(
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    fun getAll(): TaskModel {
+    fun getAll(): List<TaskModel> {
         return taskService.getAll()
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    fun getTask(@PathVariable id: String): TaskModel {
+    fun getTask(@PathVariable id: Int): TaskModel {
         //TODO: missing implementation
-        return taskService.get(id)
+        return taskService.getTask(id)
     }
 
     @PostMapping
@@ -41,7 +41,7 @@ class TaskController(
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun delete(@PathVariable id: String) {
+    fun delete(@PathVariable id: Int) {
         taskService.delete(id)
     }
 
