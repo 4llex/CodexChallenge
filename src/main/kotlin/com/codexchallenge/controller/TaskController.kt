@@ -2,6 +2,7 @@ package com.codexchallenge.controller
 
 import com.codexchallenge.controller.requesttask.PostTaskRequest
 import com.codexchallenge.model.TaskModel
+import com.codexchallenge.service.TaskService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -14,31 +15,33 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("tasks")
-class TaskController {
+class TaskController(
+        var taskService: TaskService
+) {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     fun getAll(): TaskModel {
-        return TaskModel("1", "Limpar o quarto")
+        return taskService.getAll()
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    fun get(@PathVariable id: String): TaskModel {
+    fun getTask(@PathVariable id: String): TaskModel {
         //TODO: missing implementation
-        return TaskModel("1", "Limpar o quarto")
+        return taskService.get(id)
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody task: PostTaskRequest) {
-        println(task)
+        taskService.create(task)
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun delete(@PathVariable id: String) {
-        println("remove by Id")
+        taskService.delete(id)
     }
 
 }
