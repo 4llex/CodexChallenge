@@ -1,6 +1,6 @@
 package com.codexchallenge.model
 
-data class CNPJ(
+data class CnpjModel(
         var cnpj: String,
         var isValid: Boolean
 )

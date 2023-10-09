@@ -2,7 +2,7 @@ package com.codexchallenge.controller
 
 import com.codexchallenge.controller.requestcnpj.PostCnpjRequest
 import com.codexchallenge.extension.toCnpjModel
-import com.codexchallenge.model.CNPJ
+import com.codexchallenge.model.CnpjModel
 import com.codexchallenge.service.CnpjService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
@@ -31,8 +31,7 @@ class CnpjController (
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK) //TODO: check status response
-    fun validateCnpj(@RequestBody cnpj: PostCnpjRequest): CNPJ {
-        //return cnpjService.validateCnpj(CNPJ(cnpj.cnpj , false))
+    fun validateCnpj(@RequestBody cnpj: PostCnpjRequest): CnpjModel {
         return cnpjService.validateCnpj(cnpj.toCnpjModel())
     }
 

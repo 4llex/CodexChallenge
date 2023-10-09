@@ -29,7 +29,6 @@ class TaskController(
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     fun getTask(@PathVariable id: Int): TaskModel {
-        //TODO: missing implementation
         return taskService.getTask(id)
     }
 

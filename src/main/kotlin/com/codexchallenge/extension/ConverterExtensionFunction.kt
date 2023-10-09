@@ -2,11 +2,11 @@ package com.codexchallenge.extension
 
 import com.codexchallenge.controller.requestcnpj.PostCnpjRequest
 import com.codexchallenge.controller.requesttask.PostTaskRequest
-import com.codexchallenge.model.CNPJ
+import com.codexchallenge.model.CnpjModel
 import com.codexchallenge.model.TaskModel
 
-fun PostCnpjRequest.toCnpjModel(): CNPJ {
-    return CNPJ(cnpj = this.cnpj, isValid = false)
+fun PostCnpjRequest.toCnpjModel(): CnpjModel {
+    return CnpjModel(cnpj = this.cnpj, isValid = false)
 }
 
 fun PostTaskRequest.toTaskModel(): TaskModel {

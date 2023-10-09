@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "3.1.4"
 	id("io.spring.dependency-management") version "1.1.3"
+	kotlin("plugin.serialization") version "1.4.21"
 	kotlin("jvm") version "1.8.22"
 	kotlin("plugin.spring") version "1.8.22"
 	kotlin("plugin.jpa") version "1.8.22"
@@ -20,6 +21,8 @@ repositories {
 }
 
 dependencies {
+	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	//ktor libraries
 	implementation("io.ktor:ktor-client-core:1.6.5")
 	implementation("io.ktor:ktor-client-json:1.6.5")

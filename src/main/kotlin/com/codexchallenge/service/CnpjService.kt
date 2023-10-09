@@ -1,6 +1,6 @@
 package com.codexchallenge.service
 
-import com.codexchallenge.model.CNPJ
+import com.codexchallenge.model.CnpjModel
 import org.springframework.stereotype.Service
 
 @Service
@@ -14,9 +14,9 @@ class CnpjService {
         return "cnpj from url get: $cnpj"
     }
 
-    fun validateCnpj(cnpj: CNPJ): CNPJ {
-        cnpj.isValid = validateCnpj(cnpj.cnpj)
-        return cnpj
+    fun validateCnpj(cnpjModel: CnpjModel): CnpjModel {
+        cnpjModel.isValid = validateCnpj(cnpjModel.cnpj)
+        return cnpjModel
     }
 
 }
@@ -28,7 +28,7 @@ fun validateCnpj(cnpj: String): Boolean {
 
     // Check if the length is correct (14 characters)
     if (cleanedCnpj.length != 14) {
-        return false//TODO: generate an exception
+        return false
     }
 
     val subCnpj = cleanedCnpj.substring(0, 12)
