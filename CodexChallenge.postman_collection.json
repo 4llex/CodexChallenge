@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "ebafcf16-92ad-4712-9d89-c0366e2cf2c4",
+		"name": "CodexChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7432048"
+	},
+	"item": [
+		{
+			"name": "TodoList",
+			"item": [
+				{
+					"name": "/tasks/{id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tasks/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/tasks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tasks",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/tasks",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"taskDescription\": \"uma nova task, ultimos testes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tasks",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/tasks/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tasks/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ValidateCnpj",
+			"item": [
+				{
+					"name": "/validate_cnpj",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cnpj\": \"12.648.266/0001-24\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/validate_cnpj",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"validate_cnpj"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RectangleIntersect",
+			"item": [
+				{
+					"name": "/rectangle/check_intersection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rec1\": {\r\n        \"p1\": {\r\n            \"x\": 3.0,\r\n            \"y\": 5.0\r\n        },\r\n        \"p2\": {\r\n            \"x\": 11.0,\r\n            \"y\": 11.0\r\n        }\r\n    },\r\n    \"rec2\": {\r\n        \"p1\": {\r\n            \"x\": 7.0,\r\n            \"y\": 2.0\r\n        },\r\n        \"p2\": {\r\n            \"x\": 13.0,\r\n            \"y\": 7.0\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/rectangle/check_intersection",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rectangle",
+								"check_intersection"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/rectangle/compute_area",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rec1\": {\r\n        \"p1\": {\r\n            \"x\": 3.0,\r\n            \"y\": 5.0\r\n        },\r\n        \"p2\": {\r\n            \"x\": 11.0,\r\n            \"y\": 11.0\r\n        }\r\n    },\r\n    \"rec2\": {\r\n        \"p1\": {\r\n            \"x\": 7.0,\r\n            \"y\": 2.0\r\n        },\r\n        \"p2\": {\r\n            \"x\": 13.0,\r\n            \"y\": 7.0\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/rectangle/compute_area",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rectangle",
+								"compute_area"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WorldClock",
+			"item": [
+				{
+					"name": "/world_clock/client",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/world_clock/client",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"world_clock",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/world_clock/server",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/world_clock/server",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"world_clock",
+								"server"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
