@@ -4,7 +4,7 @@
 
 
 
-## 🚀 Steps to build/run and test the project
+## Steps to build/run and test the project
 
 > #Basic info about the project - This project was built using: 
 > >SpringBoot Framework version: v3.1.4 \
@@ -14,15 +14,25 @@
 > IDE: Intellij Community
 
 To install and test this project follow this steps: \
-    *Make sure to have Mysql and Java jdk-17 pre-installed in you machine!
+    *Make sure to have Mysql and Java jdk-17 pre-installed in your machine!
 
 1. Clone this repository
 2. In src\main\resources\application.yml file, change mysql database credentials to your own username and password
 3. Go to main class, CodexChallengeApplication, and run application.
 4. Use postman collection file that you can find in the root folder of this repository.
    - 4.1 File name: CodexChallenge.postman_collection.json
-5. A video with some basic tests can also be find in root folder of this repo.
-   - 5.1 File name: 
+5. Or you can watch a video with some basic tests with the application running, see the videos below:
+
+https://github.com/4llex/CodexChallenge/assets/49563127/5c88cd28-5185-4aa8-855b-7e8b012d90c9
+
+#
+
+
+
+https://github.com/4llex/CodexChallenge/assets/49563127/d278b71d-ee2b-449d-ad04-89cb1db9f028
+
+#
+
 
 ## Tasks and Validations
 
