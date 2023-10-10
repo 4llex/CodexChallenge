@@ -5,4 +5,4 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/codexchallenge?createDatabaseIfNotExist=true
     username: root
-    password: Alex#1985
+    password: ****
